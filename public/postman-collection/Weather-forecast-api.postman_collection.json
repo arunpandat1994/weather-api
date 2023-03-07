@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "8a10f7ac-e535-45b3-9428-65d1a5d53f37",
+		"name": "Weather-forecast-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get-weather-forecast-all-cities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/weather-forecast-all-cities",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"weather-forecast-all-cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-cities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/cities?city=ghaziabad",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"cities"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "ghaziabad"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-city",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "city",
+							"value": "Noida",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "Uttar Pradesh",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "IN",
+							"type": "text"
+						},
+						{
+							"key": "lat",
+							"value": "28.6711527",
+							"type": "text"
+						},
+						{
+							"key": "lon",
+							"value": "77.4120356",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/cities/create",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"cities",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-weather-forecast-specific-city",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/weather-forecast-by-lat-lon?lat=28.6711527&lon=77.4120356",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"weather-forecast-by-lat-lon"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "28.6711527"
+						},
+						{
+							"key": "lon",
+							"value": "77.4120356"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost/weather-api/public",
+			"type": "default"
+		}
+	]
+}
